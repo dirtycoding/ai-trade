@@ -13,3 +13,22 @@
 주관 : 국민대학교 경영대학, 국민대학교 경영대학원 AI빅데이터전공/디지털마케팅전공
 
 운영 : 데이콘
+
+# Dataset Info.
+
+- train.csv [파일] :
+  - item_id : 무역품 식별 ID
+  - year : 년
+  - month : 월
+  - seq : 동일 년-월 내 일련번호
+  - type : 유형 구분 코드
+  - hs4 : HS4 코드
+  - weight : 중량
+  - quantity : 수량
+  - value : 무역량 (정수형)
+
+
+- sample_submission.csv [파일] - 제출 양식
+  - leading_item_id : 선행 무역품 식별 ID
+  - following_item_id : 후행 무역품 식별 ID
+  - value : 2025년 8월의 후행 무역품에 예측된 총 무역량 (정수형)
