@@ -1,5 +1,7 @@
 name: ai_trade_env
 channels:
+  - pytorch           # PyTorch 공식 채널 (필수)
+  - nvidia            # NVIDIA CUDA 라이브러리 (필수)
   - conda-forge
   - defaults
 
@@ -7,29 +9,35 @@ dependencies:
   - python=3.10
   - pip
 
-  # 기본 수치/데이터 처리
+  # --- PyTorch (GPU 버전) ---
+  # Conda로 설치해야 CUDA 의존성이 자동으로 관리됩니다.
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1  # 11.8 또는 12.1을 주로 사용 (최신 GPU 권장: 12.1)
+
+  # --- 기본 수치/데이터 처리 ---
   - numpy
   - pandas
   - scipy
 
-  # 머신러닝 & 통계
+  # --- 머신러닝 & 통계 ---
   - scikit-learn
-  - statsmodels       # 시계열, 회귀, 공행성/Granger 등
+  - statsmodels
 
-  # 시각화
+  # --- 시각화 ---
   - matplotlib
   - seaborn
 
-  # 개발 편의
+  # --- 개발 편의 ---
   - jupyter
   - ipykernel
   - numba
   - tqdm
 
-  # pip로 설치할 패키지들 (conda에 없거나 버전 관리 편의를 위해)
+  # --- pip로 설치할 패키지들 ---
   - pip:
-      - lightgbm      # 부스팅 기반 회귀/분류
+      - lightgbm
       - xgboost
       - catboost
-      - optuna        # 하이퍼파라미터 튜닝용
-      - torch         # 필요 시 딥러닝/시계열 DL 모델용 (CPU 버전)
+      - optuna
